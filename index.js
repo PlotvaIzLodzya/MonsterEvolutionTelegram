@@ -55,7 +55,7 @@ window.addEventListener("load", function ()
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/MonsterEvolutionTelegram.loader.js";
   var config = {
-    dataUrl: buildUrl + "/00ee408de191d1a26df9d81ad7922504.data.unityweb",
+    dataUrl: buildUrl + "/b2cbfa39a9572626eaff2a2a407c6975.data.unityweb",
     frameworkUrl: buildUrl + "/a5e38da340ffec48fa172dda6cc7b6bd.js.unityweb",
     codeUrl: buildUrl + "/640c20463340db66daa1d434e511db2f.wasm.unityweb",
     streamingAssetsUrl: "StreamingAssets",
