@@ -13,7 +13,13 @@ window.addEventListener("load", function ()
   var loadingBar = document.querySelector("#unity-loading-bar");
   var progressBarFull = document.querySelector("#unity-progress-bar-full");
   var warningBanner = document.querySelector("#unity-warning");
-
+  const defineCustomElement = CustomElementRegistry.prototype.define;
+  CustomElementRegistry.prototype.define = function define(name, constructor, options) {
+    if (name == 'tc-root') {
+      return;
+    }
+    return defineCustomElement.call(this, name, constructor, options);
+  };
   // Shows a temporary message banner/ribbon for a few seconds, or
   // a permanent error message on top of the canvas if type=='error'.
   // If type=='warning', a yellow highlight color is used.
@@ -55,9 +61,9 @@ window.addEventListener("load", function ()
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/MonsterEvolutionTelegram.loader.js";
   var config = {
-    dataUrl: buildUrl + "/5b3aa78a2f939036381c3db5f5e51cd9.data.unityweb",
-    frameworkUrl: buildUrl + "/a64ce87f2b5e225a20f6bd6c8341815b.js.unityweb",
-    codeUrl: buildUrl + "/b7cc89d0bec52fd29b4d440c3f44e881.wasm.unityweb",
+    dataUrl: buildUrl + "/f66fe7aa535955c9a5ad65ae2705cde5.data",
+    frameworkUrl: buildUrl + "/c3f250961b627dabc4b5fb5b9a472a14.js",
+    codeUrl: buildUrl + "/716f25800f0950350fe6064ecb79253b.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "MonsterEvolution",
